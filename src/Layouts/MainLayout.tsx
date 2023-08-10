@@ -7,7 +7,7 @@ export interface LayoutProps {
 export const MainLayout: React.FC<LayoutProps> = ({title, children} : LayoutProps) =>
 {
     return (
-            <div className={"container_grid"}>
+            <div className={"container_grid layout_container"}>
                 <h1 className={"applicationTitle"}>{title}</h1>
                 <div className={"searchBox"}></div>
                 <span className={"horizontalDivider"}/>

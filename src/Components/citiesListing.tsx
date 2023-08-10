@@ -12,13 +12,21 @@ export interface CanadianCityListing {
 
 export const CanadianCityListing : React.FC<CanadianCityListing> = ({ cities } : CanadianCityListing) => {
 
-    return(
-        <div className={"capitalListing"}>
-            <ul>
-                {cities.map((item) => (
-                    <li key={item.valueOf()}>{item.valueOf()}</li>
+    return (
+        <div className="capitalListing">
+            <table>
+                <tbody>
+                {cities.map((item, index) => (
+                    index % 2 === 0 ? (
+                        <tr key={index}>
+                            <td>{item}</td>
+                            {cities[index + 1] && <td>{cities[index + 1]}</td>}
+                        </tr>
+                    ) : null
                 ))}
-            </ul>
+                </tbody>
+            </table>
         </div>
     );
+
 }
